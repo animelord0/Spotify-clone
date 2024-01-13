@@ -1,0 +1,474 @@
+*{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+.main-container{
+   background: black;
+   padding: 1rem;
+   display: grid;
+   grid-template-columns: 350px 1fr;
+   grid-template-rows: 200px 1fr;
+   grid-template-areas: 
+   'header main-page main-page'
+   'side-page main-page main-page';
+   min-width: 412px;
+}
+
+/* header search bar */
+header{
+   grid-area: header;
+   background-color: rgb(24, 23, 23);
+   border-radius: 0.8rem;
+   padding:0 1rem ;
+   width: 80%;
+   min-width: 80%;
+   height: fit-content;
+}
+
+header ul  li{
+    display: flex;
+    flex-direction:  column;
+}
+
+header a{
+    font-size: 1.1rem;
+    color: whitesmoke;
+    margin: 0.9rem 0; 
+}
+header i {
+    margin-right: 1rem;
+    font-size: 1.3rem;
+  }
+  header .fa-spotify{
+    margin-right: 0.2rem;
+  }
+  header ul li:nth-child(3) a{
+    color:rgb(109, 103, 103);
+  }
+  header ul li:nth-child(1) a{
+    font-size: 1rem;
+  }
+  header ul li:nth-child(3) a:hover{
+    color: whitesmoke;
+  }
+  
+
+
+
+/*,main container>> article page   */
+article{
+    height:75vh ;
+    width: 80%;
+    background-color:rgb(24, 23, 23) ;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-area: side-page;
+}
+
+article h1{
+    font-size: 1.1rem;
+    color:rgb(109, 103, 103);
+}
+article .fa-layer-group{
+    margin-right: 1.3rem;
+    font-size: 1.3rem;
+}
+article .fa-plus{
+    margin-left: 7rem;
+    font-size: 1.3;
+}
+
+.topMiniContainer {
+    background-color: rgb(59, 59, 59) ;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.topMiniContainer button{
+    font-weight: 600;
+    margin-left: 1.5rem;
+    border-radius: 4rem;
+    padding: 0.6rem 1.3rem;
+    border: 0;
+    margin-top: 2rem;
+}
+
+.topMiniContainer button a{
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+}
+
+.topMiniContainer p{
+    font-size: 1.2rem;
+    color: whitesmoke;
+    font-weight: 600; 
+}
+.topMiniContainer .p-two{
+    font-size: 0.9rem;
+    color: rgb(187, 183, 183);
+}
+
+/* top container nav box */
+.nav-box {
+padding: 1rem;
+display: flex;
+flex-wrap: wrap;
+}
+
+.nav-box a{
+    color: rgb(109, 103, 103);
+    margin: 1rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+.nav-box-button{
+    font-weight: 600;
+    border-radius: 4rem;
+    padding: 0.6rem 1.3rem;
+    width: 44%;
+    border: 1px solid white ; 
+    background:transparent ;
+   margin-bottom: 9rem;
+    margin-left:1rem ;
+}
+
+.nav-box-button a{
+    color: white;
+    font-size: 1em;
+}
+.nav-box-button i{
+    margin-right: 0.5rem;
+}
+
+
+/* main-page */
+main{
+    grid-area: main-page;
+}
+
+main .header{
+    display: flex;
+    margin: 0 1rem;
+}
+main .arrows{
+    display: flex;
+    gap: 0.7rem;
+    flex-grow: 0;
+}
+main .arrow-btn{
+    font-weight: 600;
+    border-radius: 40%;
+    padding: 1rem;
+    color: whitesmoke;
+    background: black;
+    border: none;
+}
+
+.sub-nav-bar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    color: rgb(109, 103, 103);
+    flex-grow: 1; 
+    display: flex;
+    justify-content: flex-end; 
+}
+.sub-nav-bar li{
+    margin-right: 0.5em;
+    transition: transform 0.3s ease;
+}
+.sub-nav-bar li:hover{
+    color: white;
+    transform:scale(1.1) ;
+}
+.header .fa-bars{
+    color: rgb(255, 255, 255);
+    font-size: 1.6rem;
+    right: 1rem;
+    top: 1.5rem;
+    display: none;
+    text-align: right;
+    position: absolute;
+}
+
+/* activate this when we link it to javascrtipt  */
+.sub-menu{
+    color: white;
+    position:absolute;
+    right: 1rem;
+    border-radius:1.1rem ;
+    background-color: rgb(24, 23, 23);
+    height: 16vh;
+    width: 25vw;
+    margin-top: 2.5rem;  
+    cursor: pointer;
+    display: none;
+}
+.sub-list-menu {
+padding: 0 1rem;
+display: flex;
+flex-direction: column;
+
+}
+
+.sub-menu li a{
+   display: block;
+   margin-top: 0.9rem ;
+   font-size: 1.1rem;
+}
+
+.sub-menu li i{
+    font-size: 1rem;
+    float: right;
+}
+
+@media (max-width:1000px) {
+    .header .fa-bars{
+        display: block;
+    }
+    .sub-nav-bar{
+        display: none;
+    }
+}
+
+@media (max-width:650px) {
+    .main-container{
+        display: grid;
+        grid-template-areas: 
+        'main-page main-page'
+        'main-page main-page';
+     }
+     article{
+        display: none;
+     }
+     header{
+        display: none;
+     }
+
+}
+.sub-container {
+    font-weight: 600;
+    padding: 0.6rem 1.3rem; 
+    background:transparent ;
+    border: none;
+    font-size: 1rem;
+    padding: 1rem;
+    line-height: 20%;
+}
+
+ .btn-one{
+    border-left:1px solid white ;
+    color: rgb(109, 103, 103);
+    transition: transform 0.3s ease;
+ }
+ .btn-one:hover {
+    color: white;
+    transform:scale(1.1) ;
+}
+.btn-two{
+    border: 1px solid white;
+    border-radius: 20%;
+    background: white;
+  padding: 1.5rem;
+}
+
+/* box section */
+.main-sub-page{  
+    height: fit-content;
+    border-radius: 0.8rem;
+    margin: 1rem;
+    background-color: rgb(24, 23, 23);
+    padding: 1rem;
+    display: grid;
+   overflow: scroll;
+   -ms-overflow-style: none; 
+}
+.main-sub-page::-webkit-scrollbar {
+    display: none; 
+  }
+
+.main-page-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: whitesmoke;
+    width: 100%;
+}
+
+.box-wrapper{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: 2em;
+}
+.box{
+    display:flex;
+    flex-direction: column;
+    padding: 1.2rem 1rem;
+    border-radius:0.8rem ;
+    background-color: rgb(31, 31, 31);
+    
+}
+.box .img-box{
+    width: auto;
+    height:20vh;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: end;
+    border-radius: 0.8rem;
+    color: white;
+}
+.img-box h3{
+    margin-bottom: 0.6rem;
+    font-size: 1.3rem;
+    padding-left: 0.5rem;
+}
+.img-box i{
+display: none;
+}
+.box:hover .img-box i{
+    font-size: 1.2rem;
+    border-radius: 50%;
+    background-color: rgb(47, 197, 105);
+    width: 2rem;
+    height: 2rem;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.6rem;
+    margin-left: 0.3rem;
+}
+.box:hover{
+    background-color: rgb(56, 56, 56);
+}
+
+.box-wrapper{
+    padding: 1rem;
+}
+.box-content {
+    color: whitesmoke;
+    margin-top: 0.3rem;
+}
+.box-content p{
+    margin-top: 0.4rem;
+    color:rgb(109, 103, 103);
+}
+.box-one{
+    background-image: url(TTH.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.box-two{
+    background-image: url(chillhop.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.box-three{
+    background-image: url(calming.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.box-four{
+    background-image: url(big-on-the-internet.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.box-five{
+    background-image: url(dinner-with-friends.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.box-six{
+    background-image: url(all-out-2000.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.box-two{
+    background-image: url(dinner-with-friends.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+/* info section */
+.info{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    
+    margin-bottom: 2em;
+}
+
+.list-container{
+    padding: 1rem;
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+.list li{
+    margin: 0.5rem 0;
+    transition: transform 0.3s ease;
+}
+
+.list a{
+    color: rgb(109, 103, 103);
+}
+.list a:hover{
+    color: white;
+    border-bottom:1px solid   rgb(109, 103, 103);
+}
+.list-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  
+  }
+  
+  .list-icons i {
+    margin: 0 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgb(41, 38, 38);
+    border: 0;
+    font-size: 1.2rem;
+  }
+
+  .footer{
+    margin-bottom: 5em;
+    border-top: 1px solid rgb(109, 103, 103) ;
+  }
+.footer h3{
+    color:  rgb(109, 103, 103);
+    padding: 1rem;
+}
